@@ -10,6 +10,6 @@ link_libraries(test)
 
 include_directories(test)
 
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_executable(protobuf_start main.cpp)

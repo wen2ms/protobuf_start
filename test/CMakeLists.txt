@@ -4,9 +4,9 @@ project(test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Protobuf)
+#find_package(Protobuf)
 
-include_directories(${Protobuf_INCLUDE_DIRS})
+#include_directories(${Protobuf_INCLUDE_DIRS})
 
 aux_source_directory(./ SRC)
 
