@@ -4,11 +4,11 @@ project(protobuf_start)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(test)
+
 add_subdirectory(test)
 
 link_libraries(test)
-
-include_directories(test)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 

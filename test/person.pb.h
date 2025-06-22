@@ -29,7 +29,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "address.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_person_2eproto
@@ -44,182 +46,41 @@ struct TableStruct_person_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_person_2eproto;
-class Address;
-struct AddressDefaultTypeInternal;
-extern AddressDefaultTypeInternal _Address_default_instance_;
 class Person;
 struct PersonDefaultTypeInternal;
 extern PersonDefaultTypeInternal _Person_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
-template<> ::Address* Arena::CreateMaybeMessage<::Address>(Arena*);
 template<> ::Person* Arena::CreateMaybeMessage<::Person>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
-// ===================================================================
-
-class Address final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Address) */ {
- public:
-  inline Address() : Address(nullptr) {}
-  ~Address() override;
-  explicit PROTOBUF_CONSTEXPR Address(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Address(const Address& from);
-  Address(Address&& from) noexcept
-    : Address() {
-    *this = ::std::move(from);
-  }
-
-  inline Address& operator=(const Address& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Address& operator=(Address&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Address& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Address* internal_default_instance() {
-    return reinterpret_cast<const Address*>(
-               &_Address_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(Address& a, Address& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Address* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Address* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Address* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Address>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Address& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Address& from) {
-    Address::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Address* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Address";
-  }
-  protected:
-  explicit Address(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kCountryFieldNumber = 2,
-    kAddressIdFieldNumber = 1,
-  };
-  // bytes country = 2;
-  void clear_country();
-  const std::string& country() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_country(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_country();
-  PROTOBUF_NODISCARD std::string* release_country();
-  void set_allocated_country(std::string* country);
-  private:
-  const std::string& _internal_country() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_country(const std::string& value);
-  std::string* _internal_mutable_country();
-  public:
-
-  // int32 address_id = 1;
-  void clear_address_id();
-  int32_t address_id() const;
-  void set_address_id(int32_t value);
-  private:
-  int32_t _internal_address_id() const;
-  void _internal_set_address_id(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:Address)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr country_;
-    int32_t address_id_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_person_2eproto;
+enum Color : int {
+  kRed = 0,
+  kGreen = 1,
+  kYellow = 3,
+  kBlue = 9,
+  Color_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  Color_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-// -------------------------------------------------------------------
+bool Color_IsValid(int value);
+constexpr Color Color_MIN = kRed;
+constexpr Color Color_MAX = kBlue;
+constexpr int Color_ARRAYSIZE = Color_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Color_descriptor();
+template<typename T>
+inline const std::string& Color_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Color>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Color_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Color_descriptor(), enum_t_value);
+}
+inline bool Color_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Color* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Color>(
+    Color_descriptor(), name, value);
+}
+// ===================================================================
 
 class Person final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Person) */ {
@@ -269,7 +130,7 @@ class Person final :
                &_Person_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(Person& a, Person& b) {
     a.Swap(&b);
@@ -347,6 +208,7 @@ class Person final :
     kAddressFieldNumber = 5,
     kIdFieldNumber = 1,
     kAgeFieldNumber = 2,
+    kColorFieldNumber = 6,
   };
   // repeated bytes names = 3;
   int names_size() const;
@@ -422,6 +284,15 @@ class Person final :
   void _internal_set_age(int32_t value);
   public:
 
+  // .Color color = 6;
+  void clear_color();
+  ::Color color() const;
+  void set_color(::Color value);
+  private:
+  ::Color _internal_color() const;
+  void _internal_set_color(::Color value);
+  public:
+
   // @@protoc_insertion_point(class_scope:Person)
  private:
   class _Internal;
@@ -435,6 +306,7 @@ class Person final :
     ::Address* address_;
     int32_t id_;
     int32_t age_;
+    int color_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -449,80 +321,6 @@ class Person final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Address
-
-// int32 address_id = 1;
-inline void Address::clear_address_id() {
-  _impl_.address_id_ = 0;
-}
-inline int32_t Address::_internal_address_id() const {
-  return _impl_.address_id_;
-}
-inline int32_t Address::address_id() const {
-  // @@protoc_insertion_point(field_get:Address.address_id)
-  return _internal_address_id();
-}
-inline void Address::_internal_set_address_id(int32_t value) {
-  
-  _impl_.address_id_ = value;
-}
-inline void Address::set_address_id(int32_t value) {
-  _internal_set_address_id(value);
-  // @@protoc_insertion_point(field_set:Address.address_id)
-}
-
-// bytes country = 2;
-inline void Address::clear_country() {
-  _impl_.country_.ClearToEmpty();
-}
-inline const std::string& Address::country() const {
-  // @@protoc_insertion_point(field_get:Address.country)
-  return _internal_country();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Address::set_country(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.country_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Address.country)
-}
-inline std::string* Address::mutable_country() {
-  std::string* _s = _internal_mutable_country();
-  // @@protoc_insertion_point(field_mutable:Address.country)
-  return _s;
-}
-inline const std::string& Address::_internal_country() const {
-  return _impl_.country_.Get();
-}
-inline void Address::_internal_set_country(const std::string& value) {
-  
-  _impl_.country_.Set(value, GetArenaForAllocation());
-}
-inline std::string* Address::_internal_mutable_country() {
-  
-  return _impl_.country_.Mutable(GetArenaForAllocation());
-}
-inline std::string* Address::release_country() {
-  // @@protoc_insertion_point(field_release:Address.country)
-  return _impl_.country_.Release();
-}
-inline void Address::set_allocated_country(std::string* country) {
-  if (country != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.country_.SetAllocated(country, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.country_.IsDefault()) {
-    _impl_.country_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Address.country)
-}
-
-// -------------------------------------------------------------------
-
 // Person
 
 // int32 id = 1;
@@ -697,12 +495,6 @@ inline bool Person::_internal_has_address() const {
 inline bool Person::has_address() const {
   return _internal_has_address();
 }
-inline void Person::clear_address() {
-  if (GetArenaForAllocation() == nullptr && _impl_.address_ != nullptr) {
-    delete _impl_.address_;
-  }
-  _impl_.address_ = nullptr;
-}
 inline const ::Address& Person::_internal_address() const {
   const ::Address* p = _impl_.address_;
   return p != nullptr ? *p : reinterpret_cast<const ::Address&>(
@@ -763,11 +555,12 @@ inline ::Address* Person::mutable_address() {
 inline void Person::set_allocated_address(::Address* address) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete _impl_.address_;
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.address_);
   }
   if (address) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(address);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(address));
     if (message_arena != submessage_arena) {
       address = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, address, submessage_arena);
@@ -780,14 +573,42 @@ inline void Person::set_allocated_address(::Address* address) {
   // @@protoc_insertion_point(field_set_allocated:Person.address)
 }
 
+// .Color color = 6;
+inline void Person::clear_color() {
+  _impl_.color_ = 0;
+}
+inline ::Color Person::_internal_color() const {
+  return static_cast< ::Color >(_impl_.color_);
+}
+inline ::Color Person::color() const {
+  // @@protoc_insertion_point(field_get:Person.color)
+  return _internal_color();
+}
+inline void Person::_internal_set_color(::Color value) {
+  
+  _impl_.color_ = value;
+}
+inline void Person::set_color(::Color value) {
+  _internal_set_color(value);
+  // @@protoc_insertion_point(field_set:Person.color)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::Color> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Color>() {
+  return ::Color_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

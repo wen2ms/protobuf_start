@@ -1,8 +1,12 @@
 syntax = "proto3";
 
-message Address {
-  int32 address_id = 1;
-  bytes country = 2;
+import "address.proto";
+
+enum Color {
+  kRed = 0;
+  kGreen = 1;
+  kYellow = 3;
+  kBlue = 9;
 }
 
 message Person {
@@ -11,6 +15,7 @@ message Person {
   repeated bytes names = 3;
   bytes sex = 4;
   Address address = 5;
+  Color color = 6;
 }
 
 // protoc ./person.proto --cpp_out=./

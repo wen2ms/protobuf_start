@@ -18,6 +18,8 @@ void MyTest::test() {
     person.mutable_address()->set_address_id(1001);
     person.mutable_address()->set_country("China");
 
+    person.set_color(Color::kBlue);
+
     std::string output;
 
     person.SerializeToString(&output);
@@ -34,4 +36,6 @@ void MyTest::test() {
         std::cout << person.names(i) << ' ';
     }
     std::cout << std::endl;
+
+    std::cout << person.color() << std::endl;
 }

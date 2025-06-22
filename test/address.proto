@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Address {
+  int32 address_id = 1;
+  bytes country = 2;
+}

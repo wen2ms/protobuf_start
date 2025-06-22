@@ -41,6 +41,8 @@
 
 .idea
 
+.clion.source.upload.marker
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
