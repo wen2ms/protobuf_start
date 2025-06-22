@@ -1,10 +1,16 @@
 syntax = "proto3";
 
+message Address {
+  int32 address_id = 1;
+  bytes country = 2;
+}
+
 message Person {
   int32 id = 1;
   int32 age = 2;
-  bytes name = 3;
+  repeated bytes names = 3;
   bytes sex = 4;
-};
+  Address address = 5;
+}
 
 // protoc ./person.proto --cpp_out=./

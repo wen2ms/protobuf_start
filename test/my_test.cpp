@@ -7,8 +7,16 @@ void MyTest::test() {
 
     person.set_id(2013221);
     person.set_age(33);
-    person.set_name("Juicy");
+
+    person.add_names();;
+
+    person.set_names(0, "Kukka");
+    person.add_names("Ice");
+
     person.set_sex("Female");
+
+    person.mutable_address()->set_address_id(1001);
+    person.mutable_address()->set_country("China");
 
     std::string output;
 
@@ -18,5 +26,12 @@ void MyTest::test() {
 
     other.ParseFromString(output);
 
-    std::cout << other.id() << ", " << other.age() << ", " << other.name() << ", " << other.sex();
+    std::cout << other.id() << ", " << other.age() << ", " << other.sex() << std::endl;
+
+    std::cout << other.address().address_id() << ", " << other.address().country() << std::endl;
+
+    for (int i = 0; i < person.names_size(); ++i) {
+        std::cout << person.names(i) << ' ';
+    }
+    std::cout << std::endl;
 }
