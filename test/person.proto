@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package this_person;
+
 import "address.proto";
 
 enum Color {
@@ -14,7 +16,7 @@ message Person {
   int32 age = 2;
   repeated bytes names = 3;
   bytes sex = 4;
-  Address address = 5;
+  this_address.Address address = 5;
   Color color = 6;
 }
 

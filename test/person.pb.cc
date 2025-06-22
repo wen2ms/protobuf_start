@@ -20,6 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
+namespace this_person {
 PROTOBUF_CONSTEXPR Person::Person(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.names_)*/{}
@@ -38,46 +39,48 @@ struct PersonDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonDefaultTypeInternal _Person_default_instance_;
+}  // namespace this_person
 static ::_pb::Metadata file_level_metadata_person_2eproto[1];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_person_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_person_2eproto = nullptr;
 
 const uint32_t TableStruct_person_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Person, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.age_),
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.names_),
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.sex_),
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.address_),
-  PROTOBUF_FIELD_OFFSET(::Person, _impl_.color_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.age_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.names_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.sex_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.address_),
+  PROTOBUF_FIELD_OFFSET(::this_person::Person, _impl_.color_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::Person)},
+  { 0, -1, -1, sizeof(::this_person::Person)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::_Person_default_instance_._instance,
+  &::this_person::_Person_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_person_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\014person.proto\032\raddress.proto\"o\n\006Person\022"
-  "\n\n\002id\030\001 \001(\005\022\013\n\003age\030\002 \001(\005\022\r\n\005names\030\003 \003(\014\022"
-  "\013\n\003sex\030\004 \001(\014\022\031\n\007address\030\005 \001(\0132\010.Address\022"
-  "\025\n\005color\030\006 \001(\0162\006.Color*5\n\005Color\022\010\n\004kRed\020"
-  "\000\022\n\n\006kGreen\020\001\022\013\n\007kYellow\020\003\022\t\n\005kBlue\020\tb\006p"
-  "roto3"
+  "\n\014person.proto\022\013this_person\032\raddress.pro"
+  "to\"\210\001\n\006Person\022\n\n\002id\030\001 \001(\005\022\013\n\003age\030\002 \001(\005\022\r"
+  "\n\005names\030\003 \003(\014\022\013\n\003sex\030\004 \001(\014\022&\n\007address\030\005 "
+  "\001(\0132\025.this_address.Address\022!\n\005color\030\006 \001("
+  "\0162\022.this_person.Color*5\n\005Color\022\010\n\004kRed\020\000"
+  "\022\n\n\006kGreen\020\001\022\013\n\007kYellow\020\003\022\t\n\005kBlue\020\tb\006pr"
+  "oto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_person_2eproto_deps[1] = {
   &::descriptor_table_address_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_person_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_person_2eproto = {
-    false, false, 205, descriptor_table_protodef_person_2eproto,
+    false, false, 244, descriptor_table_protodef_person_2eproto,
     "person.proto",
     &descriptor_table_person_2eproto_once, descriptor_table_person_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_person_2eproto::offsets,
@@ -90,6 +93,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_person_2
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_person_2eproto(&descriptor_table_person_2eproto);
+namespace this_person {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Color_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_person_2eproto);
   return file_level_enum_descriptors_person_2eproto[0];
@@ -111,10 +115,10 @@ bool Color_IsValid(int value) {
 
 class Person::_Internal {
  public:
-  static const ::Address& address(const Person* msg);
+  static const ::this_address::Address& address(const Person* msg);
 };
 
-const ::Address&
+const ::this_address::Address&
 Person::_Internal::address(const Person* msg) {
   return *msg->_impl_.address_;
 }
@@ -128,7 +132,7 @@ Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Person)
+  // @@protoc_insertion_point(arena_constructor:this_person.Person)
 }
 Person::Person(const Person& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -152,12 +156,12 @@ Person::Person(const Person& from)
       _this->GetArenaForAllocation());
   }
   if (from._internal_has_address()) {
-    _this->_impl_.address_ = new ::Address(*from._impl_.address_);
+    _this->_impl_.address_ = new ::this_address::Address(*from._impl_.address_);
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.color_) -
     reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.color_));
-  // @@protoc_insertion_point(copy_constructor:Person)
+  // @@protoc_insertion_point(copy_constructor:this_person.Person)
 }
 
 inline void Person::SharedCtor(
@@ -180,7 +184,7 @@ inline void Person::SharedCtor(
 }
 
 Person::~Person() {
-  // @@protoc_insertion_point(destructor:Person)
+  // @@protoc_insertion_point(destructor:this_person.Person)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -200,7 +204,7 @@ void Person::SetCachedSize(int size) const {
 }
 
 void Person::Clear() {
-// @@protoc_insertion_point(message_clear_start:Person)
+// @@protoc_insertion_point(message_clear_start:this_person.Person)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -262,7 +266,7 @@ const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .Address address = 5;
+      // .this_address.Address address = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_address(), ptr);
@@ -270,12 +274,12 @@ const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .Color color = 6;
+      // .this_person.Color color = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_color(static_cast<::Color>(val));
+          _internal_set_color(static_cast<::this_person::Color>(val));
         } else
           goto handle_unusual;
         continue;
@@ -304,7 +308,7 @@ failure:
 
 uint8_t* Person::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Person)
+  // @@protoc_insertion_point(serialize_to_array_start:this_person.Person)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -332,14 +336,14 @@ uint8_t* Person::_InternalSerialize(
         4, this->_internal_sex(), target);
   }
 
-  // .Address address = 5;
+  // .this_address.Address address = 5;
   if (this->_internal_has_address()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(5, _Internal::address(this),
         _Internal::address(this).GetCachedSize(), target, stream);
   }
 
-  // .Color color = 6;
+  // .this_person.Color color = 6;
   if (this->_internal_color() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -350,12 +354,12 @@ uint8_t* Person::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Person)
+  // @@protoc_insertion_point(serialize_to_array_end:this_person.Person)
   return target;
 }
 
 size_t Person::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Person)
+// @@protoc_insertion_point(message_byte_size_start:this_person.Person)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -377,7 +381,7 @@ size_t Person::ByteSizeLong() const {
         this->_internal_sex());
   }
 
-  // .Address address = 5;
+  // .this_address.Address address = 5;
   if (this->_internal_has_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -394,7 +398,7 @@ size_t Person::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_age());
   }
 
-  // .Color color = 6;
+  // .this_person.Color color = 6;
   if (this->_internal_color() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_color());
@@ -413,7 +417,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Person::GetClassData() const {
 void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Person*>(&to_msg);
   auto& from = static_cast<const Person&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Person)
+  // @@protoc_insertion_point(class_specific_merge_from_start:this_person.Person)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -423,7 +427,7 @@ void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
     _this->_internal_set_sex(from._internal_sex());
   }
   if (from._internal_has_address()) {
-    _this->_internal_mutable_address()->::Address::MergeFrom(
+    _this->_internal_mutable_address()->::this_address::Address::MergeFrom(
         from._internal_address());
   }
   if (from._internal_id() != 0) {
@@ -439,7 +443,7 @@ void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
 }
 
 void Person::CopyFrom(const Person& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Person)
+// @@protoc_insertion_point(class_specific_copy_from_start:this_person.Person)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -474,10 +478,11 @@ void Person::InternalSwap(Person* other) {
 }
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace this_person
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::Person*
-Arena::CreateMaybeMessage< ::Person >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Person >(arena);
+template<> PROTOBUF_NOINLINE ::this_person::Person*
+Arena::CreateMaybeMessage< ::this_person::Person >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::this_person::Person >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

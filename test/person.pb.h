@@ -46,12 +46,15 @@ struct TableStruct_person_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_person_2eproto;
+namespace this_person {
 class Person;
 struct PersonDefaultTypeInternal;
 extern PersonDefaultTypeInternal _Person_default_instance_;
+}  // namespace this_person
 PROTOBUF_NAMESPACE_OPEN
-template<> ::Person* Arena::CreateMaybeMessage<::Person>(Arena*);
+template<> ::this_person::Person* Arena::CreateMaybeMessage<::this_person::Person>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace this_person {
 
 enum Color : int {
   kRed = 0,
@@ -83,7 +86,7 @@ inline bool Color_Parse(
 // ===================================================================
 
 class Person final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Person) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:this_person.Person) */ {
  public:
   inline Person() : Person(nullptr) {}
   ~Person() override;
@@ -186,7 +189,7 @@ class Person final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Person";
+    return "this_person.Person";
   }
   protected:
   explicit Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -248,23 +251,23 @@ class Person final :
   std::string* _internal_mutable_sex();
   public:
 
-  // .Address address = 5;
+  // .this_address.Address address = 5;
   bool has_address() const;
   private:
   bool _internal_has_address() const;
   public:
   void clear_address();
-  const ::Address& address() const;
-  PROTOBUF_NODISCARD ::Address* release_address();
-  ::Address* mutable_address();
-  void set_allocated_address(::Address* address);
+  const ::this_address::Address& address() const;
+  PROTOBUF_NODISCARD ::this_address::Address* release_address();
+  ::this_address::Address* mutable_address();
+  void set_allocated_address(::this_address::Address* address);
   private:
-  const ::Address& _internal_address() const;
-  ::Address* _internal_mutable_address();
+  const ::this_address::Address& _internal_address() const;
+  ::this_address::Address* _internal_mutable_address();
   public:
   void unsafe_arena_set_allocated_address(
-      ::Address* address);
-  ::Address* unsafe_arena_release_address();
+      ::this_address::Address* address);
+  ::this_address::Address* unsafe_arena_release_address();
 
   // int32 id = 1;
   void clear_id();
@@ -284,16 +287,16 @@ class Person final :
   void _internal_set_age(int32_t value);
   public:
 
-  // .Color color = 6;
+  // .this_person.Color color = 6;
   void clear_color();
-  ::Color color() const;
-  void set_color(::Color value);
+  ::this_person::Color color() const;
+  void set_color(::this_person::Color value);
   private:
-  ::Color _internal_color() const;
-  void _internal_set_color(::Color value);
+  ::this_person::Color _internal_color() const;
+  void _internal_set_color(::this_person::Color value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Person)
+  // @@protoc_insertion_point(class_scope:this_person.Person)
  private:
   class _Internal;
 
@@ -303,7 +306,7 @@ class Person final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> names_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sex_;
-    ::Address* address_;
+    ::this_address::Address* address_;
     int32_t id_;
     int32_t age_;
     int color_;
@@ -331,7 +334,7 @@ inline int32_t Person::_internal_id() const {
   return _impl_.id_;
 }
 inline int32_t Person::id() const {
-  // @@protoc_insertion_point(field_get:Person.id)
+  // @@protoc_insertion_point(field_get:this_person.Person.id)
   return _internal_id();
 }
 inline void Person::_internal_set_id(int32_t value) {
@@ -340,7 +343,7 @@ inline void Person::_internal_set_id(int32_t value) {
 }
 inline void Person::set_id(int32_t value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:Person.id)
+  // @@protoc_insertion_point(field_set:this_person.Person.id)
 }
 
 // int32 age = 2;
@@ -351,7 +354,7 @@ inline int32_t Person::_internal_age() const {
   return _impl_.age_;
 }
 inline int32_t Person::age() const {
-  // @@protoc_insertion_point(field_get:Person.age)
+  // @@protoc_insertion_point(field_get:this_person.Person.age)
   return _internal_age();
 }
 inline void Person::_internal_set_age(int32_t value) {
@@ -360,7 +363,7 @@ inline void Person::_internal_set_age(int32_t value) {
 }
 inline void Person::set_age(int32_t value) {
   _internal_set_age(value);
-  // @@protoc_insertion_point(field_set:Person.age)
+  // @@protoc_insertion_point(field_set:this_person.Person.age)
 }
 
 // repeated bytes names = 3;
@@ -375,66 +378,66 @@ inline void Person::clear_names() {
 }
 inline std::string* Person::add_names() {
   std::string* _s = _internal_add_names();
-  // @@protoc_insertion_point(field_add_mutable:Person.names)
+  // @@protoc_insertion_point(field_add_mutable:this_person.Person.names)
   return _s;
 }
 inline const std::string& Person::_internal_names(int index) const {
   return _impl_.names_.Get(index);
 }
 inline const std::string& Person::names(int index) const {
-  // @@protoc_insertion_point(field_get:Person.names)
+  // @@protoc_insertion_point(field_get:this_person.Person.names)
   return _internal_names(index);
 }
 inline std::string* Person::mutable_names(int index) {
-  // @@protoc_insertion_point(field_mutable:Person.names)
+  // @@protoc_insertion_point(field_mutable:this_person.Person.names)
   return _impl_.names_.Mutable(index);
 }
 inline void Person::set_names(int index, const std::string& value) {
   _impl_.names_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:Person.names)
+  // @@protoc_insertion_point(field_set:this_person.Person.names)
 }
 inline void Person::set_names(int index, std::string&& value) {
   _impl_.names_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:Person.names)
+  // @@protoc_insertion_point(field_set:this_person.Person.names)
 }
 inline void Person::set_names(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.names_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:Person.names)
+  // @@protoc_insertion_point(field_set_char:this_person.Person.names)
 }
 inline void Person::set_names(int index, const void* value, size_t size) {
   _impl_.names_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Person.names)
+  // @@protoc_insertion_point(field_set_pointer:this_person.Person.names)
 }
 inline std::string* Person::_internal_add_names() {
   return _impl_.names_.Add();
 }
 inline void Person::add_names(const std::string& value) {
   _impl_.names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:Person.names)
+  // @@protoc_insertion_point(field_add:this_person.Person.names)
 }
 inline void Person::add_names(std::string&& value) {
   _impl_.names_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:Person.names)
+  // @@protoc_insertion_point(field_add:this_person.Person.names)
 }
 inline void Person::add_names(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:Person.names)
+  // @@protoc_insertion_point(field_add_char:this_person.Person.names)
 }
 inline void Person::add_names(const void* value, size_t size) {
   _impl_.names_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:Person.names)
+  // @@protoc_insertion_point(field_add_pointer:this_person.Person.names)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 Person::names() const {
-  // @@protoc_insertion_point(field_list:Person.names)
+  // @@protoc_insertion_point(field_list:this_person.Person.names)
   return _impl_.names_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 Person::mutable_names() {
-  // @@protoc_insertion_point(field_mutable_list:Person.names)
+  // @@protoc_insertion_point(field_mutable_list:this_person.Person.names)
   return &_impl_.names_;
 }
 
@@ -443,7 +446,7 @@ inline void Person::clear_sex() {
   _impl_.sex_.ClearToEmpty();
 }
 inline const std::string& Person::sex() const {
-  // @@protoc_insertion_point(field_get:Person.sex)
+  // @@protoc_insertion_point(field_get:this_person.Person.sex)
   return _internal_sex();
 }
 template <typename ArgT0, typename... ArgT>
@@ -451,11 +454,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Person::set_sex(ArgT0&& arg0, ArgT... args) {
  
  _impl_.sex_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Person.sex)
+  // @@protoc_insertion_point(field_set:this_person.Person.sex)
 }
 inline std::string* Person::mutable_sex() {
   std::string* _s = _internal_mutable_sex();
-  // @@protoc_insertion_point(field_mutable:Person.sex)
+  // @@protoc_insertion_point(field_mutable:this_person.Person.sex)
   return _s;
 }
 inline const std::string& Person::_internal_sex() const {
@@ -470,7 +473,7 @@ inline std::string* Person::_internal_mutable_sex() {
   return _impl_.sex_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Person::release_sex() {
-  // @@protoc_insertion_point(field_release:Person.sex)
+  // @@protoc_insertion_point(field_release:this_person.Person.sex)
   return _impl_.sex_.Release();
 }
 inline void Person::set_allocated_sex(std::string* sex) {
@@ -485,27 +488,27 @@ inline void Person::set_allocated_sex(std::string* sex) {
     _impl_.sex_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Person.sex)
+  // @@protoc_insertion_point(field_set_allocated:this_person.Person.sex)
 }
 
-// .Address address = 5;
+// .this_address.Address address = 5;
 inline bool Person::_internal_has_address() const {
   return this != internal_default_instance() && _impl_.address_ != nullptr;
 }
 inline bool Person::has_address() const {
   return _internal_has_address();
 }
-inline const ::Address& Person::_internal_address() const {
-  const ::Address* p = _impl_.address_;
-  return p != nullptr ? *p : reinterpret_cast<const ::Address&>(
-      ::_Address_default_instance_);
+inline const ::this_address::Address& Person::_internal_address() const {
+  const ::this_address::Address* p = _impl_.address_;
+  return p != nullptr ? *p : reinterpret_cast<const ::this_address::Address&>(
+      ::this_address::_Address_default_instance_);
 }
-inline const ::Address& Person::address() const {
-  // @@protoc_insertion_point(field_get:Person.address)
+inline const ::this_address::Address& Person::address() const {
+  // @@protoc_insertion_point(field_get:this_person.Person.address)
   return _internal_address();
 }
 inline void Person::unsafe_arena_set_allocated_address(
-    ::Address* address) {
+    ::this_address::Address* address) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.address_);
   }
@@ -515,11 +518,11 @@ inline void Person::unsafe_arena_set_allocated_address(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:Person.address)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:this_person.Person.address)
 }
-inline ::Address* Person::release_address() {
+inline ::this_address::Address* Person::release_address() {
   
-  ::Address* temp = _impl_.address_;
+  ::this_address::Address* temp = _impl_.address_;
   _impl_.address_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -532,27 +535,27 @@ inline ::Address* Person::release_address() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::Address* Person::unsafe_arena_release_address() {
-  // @@protoc_insertion_point(field_release:Person.address)
+inline ::this_address::Address* Person::unsafe_arena_release_address() {
+  // @@protoc_insertion_point(field_release:this_person.Person.address)
   
-  ::Address* temp = _impl_.address_;
+  ::this_address::Address* temp = _impl_.address_;
   _impl_.address_ = nullptr;
   return temp;
 }
-inline ::Address* Person::_internal_mutable_address() {
+inline ::this_address::Address* Person::_internal_mutable_address() {
   
   if (_impl_.address_ == nullptr) {
-    auto* p = CreateMaybeMessage<::Address>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::this_address::Address>(GetArenaForAllocation());
     _impl_.address_ = p;
   }
   return _impl_.address_;
 }
-inline ::Address* Person::mutable_address() {
-  ::Address* _msg = _internal_mutable_address();
-  // @@protoc_insertion_point(field_mutable:Person.address)
+inline ::this_address::Address* Person::mutable_address() {
+  ::this_address::Address* _msg = _internal_mutable_address();
+  // @@protoc_insertion_point(field_mutable:this_person.Person.address)
   return _msg;
 }
-inline void Person::set_allocated_address(::Address* address) {
+inline void Person::set_allocated_address(::this_address::Address* address) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.address_);
@@ -570,27 +573,27 @@ inline void Person::set_allocated_address(::Address* address) {
     
   }
   _impl_.address_ = address;
-  // @@protoc_insertion_point(field_set_allocated:Person.address)
+  // @@protoc_insertion_point(field_set_allocated:this_person.Person.address)
 }
 
-// .Color color = 6;
+// .this_person.Color color = 6;
 inline void Person::clear_color() {
   _impl_.color_ = 0;
 }
-inline ::Color Person::_internal_color() const {
-  return static_cast< ::Color >(_impl_.color_);
+inline ::this_person::Color Person::_internal_color() const {
+  return static_cast< ::this_person::Color >(_impl_.color_);
 }
-inline ::Color Person::color() const {
-  // @@protoc_insertion_point(field_get:Person.color)
+inline ::this_person::Color Person::color() const {
+  // @@protoc_insertion_point(field_get:this_person.Person.color)
   return _internal_color();
 }
-inline void Person::_internal_set_color(::Color value) {
+inline void Person::_internal_set_color(::this_person::Color value) {
   
   _impl_.color_ = value;
 }
-inline void Person::set_color(::Color value) {
+inline void Person::set_color(::this_person::Color value) {
   _internal_set_color(value);
-  // @@protoc_insertion_point(field_set:Person.color)
+  // @@protoc_insertion_point(field_set:this_person.Person.color)
 }
 
 #ifdef __GNUC__
@@ -599,13 +602,14 @@ inline void Person::set_color(::Color value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace this_person
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::Color> : ::std::true_type {};
+template <> struct is_proto_enum< ::this_person::Color> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Color>() {
-  return ::Color_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::this_person::Color>() {
+  return ::this_person::Color_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

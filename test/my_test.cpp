@@ -3,7 +3,7 @@
 #include "person.pb.h"
 
 void MyTest::test() {
-    Person person;
+    this_person::Person person;
 
     person.set_id(2013221);
     person.set_age(33);
@@ -18,13 +18,13 @@ void MyTest::test() {
     person.mutable_address()->set_address_id(1001);
     person.mutable_address()->set_country("China");
 
-    person.set_color(Color::kBlue);
+    person.set_color(this_person::Color::kBlue);
 
     std::string output;
 
     person.SerializeToString(&output);
 
-    Person other;
+    this_person::Person other;
 
     other.ParseFromString(output);
 

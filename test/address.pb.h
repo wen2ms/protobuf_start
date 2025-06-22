@@ -44,17 +44,20 @@ struct TableStruct_address_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_address_2eproto;
+namespace this_address {
 class Address;
 struct AddressDefaultTypeInternal;
 extern AddressDefaultTypeInternal _Address_default_instance_;
+}  // namespace this_address
 PROTOBUF_NAMESPACE_OPEN
-template<> ::Address* Arena::CreateMaybeMessage<::Address>(Arena*);
+template<> ::this_address::Address* Arena::CreateMaybeMessage<::this_address::Address>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace this_address {
 
 // ===================================================================
 
 class Address final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Address) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:this_address.Address) */ {
  public:
   inline Address() : Address(nullptr) {}
   ~Address() override;
@@ -157,7 +160,7 @@ class Address final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Address";
+    return "this_address.Address";
   }
   protected:
   explicit Address(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -200,7 +203,7 @@ class Address final :
   void _internal_set_address_id(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Address)
+  // @@protoc_insertion_point(class_scope:this_address.Address)
  private:
   class _Internal;
 
@@ -234,7 +237,7 @@ inline int32_t Address::_internal_address_id() const {
   return _impl_.address_id_;
 }
 inline int32_t Address::address_id() const {
-  // @@protoc_insertion_point(field_get:Address.address_id)
+  // @@protoc_insertion_point(field_get:this_address.Address.address_id)
   return _internal_address_id();
 }
 inline void Address::_internal_set_address_id(int32_t value) {
@@ -243,7 +246,7 @@ inline void Address::_internal_set_address_id(int32_t value) {
 }
 inline void Address::set_address_id(int32_t value) {
   _internal_set_address_id(value);
-  // @@protoc_insertion_point(field_set:Address.address_id)
+  // @@protoc_insertion_point(field_set:this_address.Address.address_id)
 }
 
 // bytes country = 2;
@@ -251,7 +254,7 @@ inline void Address::clear_country() {
   _impl_.country_.ClearToEmpty();
 }
 inline const std::string& Address::country() const {
-  // @@protoc_insertion_point(field_get:Address.country)
+  // @@protoc_insertion_point(field_get:this_address.Address.country)
   return _internal_country();
 }
 template <typename ArgT0, typename... ArgT>
@@ -259,11 +262,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Address::set_country(ArgT0&& arg0, ArgT... args) {
  
  _impl_.country_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Address.country)
+  // @@protoc_insertion_point(field_set:this_address.Address.country)
 }
 inline std::string* Address::mutable_country() {
   std::string* _s = _internal_mutable_country();
-  // @@protoc_insertion_point(field_mutable:Address.country)
+  // @@protoc_insertion_point(field_mutable:this_address.Address.country)
   return _s;
 }
 inline const std::string& Address::_internal_country() const {
@@ -278,7 +281,7 @@ inline std::string* Address::_internal_mutable_country() {
   return _impl_.country_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Address::release_country() {
-  // @@protoc_insertion_point(field_release:Address.country)
+  // @@protoc_insertion_point(field_release:this_address.Address.country)
   return _impl_.country_.Release();
 }
 inline void Address::set_allocated_country(std::string* country) {
@@ -293,7 +296,7 @@ inline void Address::set_allocated_country(std::string* country) {
     _impl_.country_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Address.country)
+  // @@protoc_insertion_point(field_set_allocated:this_address.Address.country)
 }
 
 #ifdef __GNUC__
@@ -302,6 +305,7 @@ inline void Address::set_allocated_country(std::string* country) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace this_address
 
 // @@protoc_insertion_point(global_scope)
 
